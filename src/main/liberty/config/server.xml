@@ -35,7 +35,7 @@
   	  />
 	</dataSource>
 	 
-    <httpEndpoint httpPort="${default.http.port}" httpsPort="${default.https.port}"
+    <httpEndpoint httpPort="${default.http.port}" host="*" httpsPort="${default.https.port}"
         id="defaultHttpEndpoint">
     <tcpOptions soReuseAddr="true"/>
     
