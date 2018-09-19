@@ -8,7 +8,7 @@ RUN wget -q http://mirror.olnevhost.net/pub/apache//db/derby/db-derby-$DERBY_VER
 	cd /tmp && \
 	echo $DERBY_KEY db-derby-$DERBY_VERSION-bin.tar.gz | md5sum -c && \
 	tar zxf db-derby-$DERBY_VERSION-bin.tar.gz && \
-	cp db-derby-$DERBY_VERSION-bin/lib/derby.jar /opt/ibm/wlp/usr/shared/resources/derby-$DERBY_VERSION.jar && \
+	mv db-derby-$DERBY_VERSION-bin/lib/derby.jar /opt/ibm/wlp/usr/shared/resources/derby-$DERBY_VERSION.jar && \
 	rm -rf /tmp/*
 COPY target/liberty/wlp/usr/servers/defaultServer/server.xml /config/server.xml
 COPY target/liberty/wlp/usr/servers/defaultServer/bootstrap.properties /config/bootstrap.properties
