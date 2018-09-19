@@ -1,7 +1,9 @@
 FROM websphere-liberty:webProfile7
+
 ENV LICENSE accept
 ENV DERBY_KEY aade6f4eaa2504fc04dc561fc3e7c374
 ENV DERBY_VERSION 10.13.1.1
+
 RUN wget -q http://mirror.olnevhost.net/pub/apache//db/derby/db-derby-$DERBY_VERSION/db-derby-$DERBY_VERSION-bin.tar.gz -O /tmp/db-derby-$DERBY_VERSION-bin.tar.gz && \
 	cd /tmp && \
 	echo $DERBY_KEY db-derby-$DERBY_VERSION-bin.tar.gz | md5sum -c && \
