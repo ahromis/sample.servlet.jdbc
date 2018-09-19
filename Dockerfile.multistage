@@ -16,7 +16,6 @@ RUN wget -q http://mirror.olnevhost.net/pub/apache//db/derby/db-derby-$DERBY_VER
 	tar zxf db-derby-$DERBY_VERSION-bin.tar.gz && \
 	cp db-derby-$DERBY_VERSION-bin/lib/derby.jar /opt/ibm/wlp/usr/shared/resources/derby-$DERBY_VERSION.jar && \
 	rm -rf /tmp/*
-EXPOSE 8080  
 COPY --from=build /usr/src/app/target/liberty/wlp/usr/servers/defaultServer/server.xml /config/server.xml
 COPY --from=build /usr/src/app/target/liberty/wlp/usr/servers/defaultServer/bootstrap.properties /config/bootstrap.properties
 COPY --from=build /usr/src/app/target/*.war /config/apps/JDBCApp.war
